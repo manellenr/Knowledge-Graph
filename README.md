@@ -1,1 +1,3 @@
-# Automated generated file for Social Network analysis using NetworkX
+# Automated generated file for Social Network Analysis
+
+The objective of the project is to explore and apply social network analysis concepts to detect fraudulent behavior within networks. By leveraging centrality metrics such as degree centrality, betweenness centrality, closeness centrality, and eigenvector centrality, the project evaluates individuals' influence within a network and assesses the risk of fraud. Two approaches are proposed: a basic analysis based on individuals' connections and an advanced approach that integrates centrality metrics with pre-existing fraud scores to predict the likelihood of an individual's involvement in fraudulent activities.
