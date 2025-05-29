@@ -2,7 +2,6 @@ import networkx as nx
 import random
 import matplotlib.pyplot as plt
 
-# Initialize graph with nodes and edges
 def create_graph():
     graph = nx.Graph()
     nodes = range(1, 10)
@@ -12,14 +11,12 @@ def create_graph():
     graph.add_edges_from(edges)
     return graph
 
-# Visualize graph with centrality metrics
 def visualize_graph(graph):
     pos = nx.spring_layout(graph)
     plt.figure(figsize=(10, 7))
     nx.draw(graph, pos, with_labels=True, node_size=700, node_color='skyblue', font_size=10)
     plt.show()
 
-# Centrality calculations
 def calculate_centrality(graph):
     degree_centrality = nx.degree_centrality(graph)
     betweenness_centrality = nx.betweenness_centrality(graph)
@@ -28,7 +25,6 @@ def calculate_centrality(graph):
 
     return degree_centrality, betweenness_centrality, closeness_centrality, eigenvector_centrality
 
-# Fraud analysis based on neighbors
 def likelihood(neighbors, T, graph):
     weights = [1 if graph.nodes[i]['role'] == 'F' else 0 for i in neighbors]
     P = sum(weights) / len(neighbors)
@@ -38,7 +34,6 @@ def likelihood(neighbors, T, graph):
     else:
         print(f"The likelihood is {P}, which means that the person is not involved in fraud.")
 
-# Calculate Degree of Suspicion (DOS)
 def compute_dos(graph, centrality, negative_scores):
     dos_nodes = {}
     for node in graph.nodes:
@@ -49,14 +44,12 @@ def compute_dos(graph, centrality, negative_scores):
     normalized_dos = {node: dos / max_dos for node, dos in dos_nodes.items()}
     return normalized_dos
 
-# Randomly assign negative scores for fraud (F) nodes
 def assign_negative_scores(graph):
     negative_scores = {}
     for node in graph.nodes:
         negative_scores[node] = random.choice([6, 7, 8, 10]) if graph.nodes[node]['role'] == 'F' else 0
     return negative_scores
 
-# Example use of the above functions
 def main():
     graph = create_graph()
 
