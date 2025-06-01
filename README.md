@@ -1,3 +1,0 @@
-# Social Network Analysis
-
-The objective of the project is to explore and apply social network analysis concepts to detect fraudulent behavior within networks. Centrality measures such as degree centrality, interdependence centrality, proximity centrality, and eigenvector centrality are used. The project evaluates the influence of individuals within a network and estimates the risk of fraud. I proposed two approaches: a basic analysis based on individuals' connections, and an approach that combines centrality measures with pre-existing fraud scores to predict the likelihood of an individual's involvement in fraudulent activities.
